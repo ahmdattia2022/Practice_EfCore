@@ -1,0 +1,10 @@
+back to migration zero command:
+	> Update-Database -migration:0
+
+------
+Data Annotation Vs. Fluent API?
+	data annotation is written in the domain model
+	, and fluent api -> use model builder in dbContext to determine that the field is required
+	-> fluent API is better -> shows all details of the properties -> for the seperatoin of concern
+
+
