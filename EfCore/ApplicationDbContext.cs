@@ -27,11 +27,22 @@ namespace EfCore
 
 
             //exlude table from migrations:
-            modelBuilder.Entity<Blog>().ToTable("Blogs", b => b.ExcludeFromMigrations()); 
+            //modelBuilder.Entity<Blog>().ToTable("Blogs", b => b.ExcludeFromMigrations()); 
+            //modelBuilder.Entity<Blog>().Ignore(b => b.Posts);
+            //modelBuilder.Entity<Blog>(p =>
+            //{
+            //    p.Property(b => b.Posts).HasColumnType("nvarchar(250)").HasMaxLength(250);
+            //});
+
+            modelBuilder.Entity<Post>().HasKey(x => x.BookKey).HasName("PK_BookKey");
+            modelBuilder.Entity<Post>().Property(x => x.CreatedOn).HasDefaultValueSql("GETDATE()");
+            
+
+
 
         }
 
         public DbSet<Blog> Blogs { get; set; }
-
+        public DbSet<Author> Authors { get; set; }
     }
 }
