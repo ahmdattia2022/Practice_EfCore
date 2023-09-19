@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EfCore.Models;
+using System;
 
 namespace EfCore
 {
@@ -7,7 +8,14 @@ namespace EfCore
         static void Main(string[] args)
         {
             var _context = new ApplicationDbContext();
-            
+            var author = new Author
+            {
+                FirstName = "Ahmed",
+                LastName = "Attia"
+            };
+
+            _context.Authors.Add(author);
+            _context.SaveChanges();
 
 
         }

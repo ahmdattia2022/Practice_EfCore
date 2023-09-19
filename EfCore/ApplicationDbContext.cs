@@ -36,8 +36,10 @@ namespace EfCore
 
             modelBuilder.Entity<Post>().HasKey(x => x.BookKey).HasName("PK_BookKey");
             modelBuilder.Entity<Post>().Property(x => x.CreatedOn).HasDefaultValueSql("GETDATE()");
-            
 
+
+            //Computed column in author entity
+            modelBuilder.Entity<Author>().Property(x => x.DisplayName).HasComputedColumnSql("[FirstName] + ',' + [LastName]");
 
 
         }
