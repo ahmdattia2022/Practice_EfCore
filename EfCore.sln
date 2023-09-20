@@ -7,8 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCore", "EfCore\EfCore.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF485AD2-E599-4892-B769-BF6248EB9760}"
 	ProjectSection(SolutionItems) = preProject
+		EfCore_V2.txt = EfCore_V2.txt
 		Notes.txt = Notes.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCoreV2", "EfCoreV2\EfCoreV2.csproj", "{45245729-95EF-41DF-A7E0-014409C0DF9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +23,10 @@ Global
 		{ACE74A87-9657-471E-96C5-7086251BA1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACE74A87-9657-471E-96C5-7086251BA1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACE74A87-9657-471E-96C5-7086251BA1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45245729-95EF-41DF-A7E0-014409C0DF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45245729-95EF-41DF-A7E0-014409C0DF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45245729-95EF-41DF-A7E0-014409C0DF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45245729-95EF-41DF-A7E0-014409C0DF9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
