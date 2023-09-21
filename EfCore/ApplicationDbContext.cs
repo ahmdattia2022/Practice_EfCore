@@ -40,7 +40,25 @@ namespace EfCore
 
             //Computed column in author entity
             modelBuilder.Entity<Author>().Property(x => x.DisplayName).HasComputedColumnSql("[FirstName] + ',' + [LastName]");
+            modelBuilder.Entity<Blog>().HasMany(x => x.Posts).WithOne(x => x.Blog);
+            //Many to Many relationship
+            modelBuilder.Entity<Post>().HasMany(x => x.Tags).WithMany(x => x.Posts)
+                .UsingEntity<PostTag>(
+                      z => z
+                        .HasOne(p => p.Tag)
+                        .WithMany(t => t.PostTags)
+                        .HasForeignKey(f => f.TagId),
+                      zz => zz
+                        .HasOne(t => t.Post)
+                        .WithMany(f => f.PostTags)
+                        .HasForeignKey(ff => ff.PostId),
+                      cmp =>
+                      {
+                          cmp.Property(pt => pt.AddedOn).HasDefaultValueSql("GETDATE()");
+                          cmp.HasKey(key => new { key.TagId, key.PostId });
+                      }
 
+                ) ;
 
         }
 
